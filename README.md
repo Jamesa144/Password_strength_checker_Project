@@ -1,4 +1,2 @@
-This is the start of my machine learning where I use the data set provided by AIOscience.com to create a model. This model can check if an enter password is strong, medium or weak.
-
-Some things I noticed in my first attempt is that running the training can take a bit of time with a large data set on my computer. I counter this by max out the number of tests it does but the accuracy 
-is low for actual use but works for proof of concept the model works.
+This is the start of my machine learning, where I use the data set provided by Kaggle to create a password strength classifier model. The goal is for the model to be able to tell whether a password entered is strong, medium, or weak.
+I noticed in my first attempt that running the training can take a bit of time with a large data set on my computer. I counter this by limiting the maximum number of tests it does, but this caused the model to have a low accuracy.  My next step will be to see if I can get the model to generate a strong password only.
