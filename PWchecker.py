@@ -1,15 +1,17 @@
 import warnings
 warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
 
-# Rest of your code
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-data = pd.read_csv("d:/PWChecker/training.csv", on_bad_lines='skip')
+data = pd.read_csv(# Path to data set goes here
+    , on_bad_lines='skip')
+
 data = data.dropna()
+
 data["strength"] = data["strength"].map({0: "weak", 1: "medium", 2: "strong"})
 
 def word(password):
@@ -20,8 +22,8 @@ y = np.array(data["strength"])
 
 # Set token_pattern=None to avoid triggering the warning
 tfidf = TfidfVectorizer(tokenizer=word, token_pattern=None,max_features=700)
-x = tfidf.fit_transform(x)
 
+x = tfidf.fit_transform(x)
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.05, random_state=42)
 model = RandomForestClassifier()
 model.fit(xtrain, ytrain)
